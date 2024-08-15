@@ -13,6 +13,9 @@ declare module 'vue' {
     AdminAppMenuItem: typeof import('./src/layout/admin/AppMenuItem.vue')['default']
     AdminAppSidebar: typeof import('./src/layout/admin/AppSidebar.vue')['default']
     AdminAppTopbar: typeof import('./src/layout/admin/AppTopbar.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    AppLayout: typeof import('./src/layout/AppLayout.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
+    Toast: typeof import('primevue/toast')['default']
   }
 }
