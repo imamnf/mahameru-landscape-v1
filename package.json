@@ -12,7 +12,6 @@
     "@primevue/core": "^4.0.4",
     "@primevue/themes": "^4.0.4",
     "@unhead/vue": "^1.9.16",
-    "pinia": "^2.2.1",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.4",
     "vue": "^3.4.35",

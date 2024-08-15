@@ -111,20 +111,12 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly FieldContextKey: UnwrapRef<typeof import('vee-validate')['FieldContextKey']>
-    readonly FormContextKey: UnwrapRef<typeof import('vee-validate')['FormContextKey']>
-    readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
-    readonly configure: UnwrapRef<typeof import('vee-validate')['configure']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
-    readonly createPinia: UnwrapRef<typeof import('pinia')['createPinia']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
-    readonly defineRule: UnwrapRef<typeof import('vee-validate')['defineRule']>
-    readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
-    readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
@@ -133,11 +125,6 @@ declare module 'vue' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
-    readonly mapActions: UnwrapRef<typeof import('pinia')['mapActions']>
-    readonly mapGetters: UnwrapRef<typeof import('pinia')['mapGetters']>
-    readonly mapState: UnwrapRef<typeof import('pinia')['mapState']>
-    readonly mapStores: UnwrapRef<typeof import('pinia')['mapStores']>
-    readonly mapWritableState: UnwrapRef<typeof import('pinia')['mapWritableState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
@@ -161,12 +148,9 @@ declare module 'vue' {
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
     readonly registerPlugins: UnwrapRef<typeof import('./src/utils/plugins')['registerPlugins']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
-    readonly setActivePinia: UnwrapRef<typeof import('pinia')['setActivePinia']>
-    readonly setMapStoreSuffix: UnwrapRef<typeof import('pinia')['setMapStoreSuffix']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
-    readonly storeToRefs: UnwrapRef<typeof import('pinia')['storeToRefs']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
@@ -176,29 +160,9 @@ declare module 'vue' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
-    readonly useField: UnwrapRef<typeof import('vee-validate')['useField']>
-    readonly useFieldArray: UnwrapRef<typeof import('vee-validate')['useFieldArray']>
-    readonly useFieldError: UnwrapRef<typeof import('vee-validate')['useFieldError']>
-    readonly useFieldValue: UnwrapRef<typeof import('vee-validate')['useFieldValue']>
-    readonly useForm: UnwrapRef<typeof import('vee-validate')['useForm']>
-    readonly useFormErrors: UnwrapRef<typeof import('vee-validate')['useFormErrors']>
-    readonly useFormValues: UnwrapRef<typeof import('vee-validate')['useFormValues']>
-    readonly useIsFieldDirty: UnwrapRef<typeof import('vee-validate')['useIsFieldDirty']>
-    readonly useIsFieldTouched: UnwrapRef<typeof import('vee-validate')['useIsFieldTouched']>
-    readonly useIsFieldValid: UnwrapRef<typeof import('vee-validate')['useIsFieldValid']>
-    readonly useIsFormDirty: UnwrapRef<typeof import('vee-validate')['useIsFormDirty']>
-    readonly useIsFormTouched: UnwrapRef<typeof import('vee-validate')['useIsFormTouched']>
-    readonly useIsFormValid: UnwrapRef<typeof import('vee-validate')['useIsFormValid']>
-    readonly useIsSubmitting: UnwrapRef<typeof import('vee-validate')['useIsSubmitting']>
-    readonly useResetForm: UnwrapRef<typeof import('vee-validate')['useResetForm']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
-    readonly useSubmitCount: UnwrapRef<typeof import('vee-validate')['useSubmitCount']>
-    readonly useSubmitForm: UnwrapRef<typeof import('vee-validate')['useSubmitForm']>
-    readonly useValidateField: UnwrapRef<typeof import('vee-validate')['useValidateField']>
-    readonly useValidateForm: UnwrapRef<typeof import('vee-validate')['useValidateForm']>
-    readonly validate: UnwrapRef<typeof import('vee-validate')['validate']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>

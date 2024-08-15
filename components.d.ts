@@ -7,33 +7,21 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AdminAppFooter: typeof import('./src/layout/admin/AppFooter.vue')['default']
-    AdminAppLayout: typeof import('./src/layout/admin/AppLayout.vue')['default']
-    AdminAppMenu: typeof import('./src/layout/admin/AppMenu.vue')['default']
-    AdminAppMenuItem: typeof import('./src/layout/admin/AppMenuItem.vue')['default']
-    AdminAppSidebar: typeof import('./src/layout/admin/AppSidebar.vue')['default']
-    AdminAppTopbar: typeof import('./src/layout/admin/AppTopbar.vue')['default']
+    AppFooter: typeof import('./src/layout/AppFooter.vue')['default']
     AppLayout: typeof import('./src/layout/AppLayout.vue')['default']
+    AppMenu: typeof import('./src/layout/AppMenu.vue')['default']
+    Avatar: typeof import('primevue/avatar')['default']
+    Badge: typeof import('primevue/badge')['default']
     Button: typeof import('primevue/button')['default']
-    Column: typeof import('primevue/column')['default']
-    DataTable: typeof import('primevue/datatable')['default']
-    Dialog: typeof import('primevue/dialog')['default']
-    FileUpload: typeof import('primevue/fileupload')['default']
-    IconField: typeof import('primevue/iconfield')['default']
-    InputIcon: typeof import('primevue/inputicon')['default']
-    InputNumber: typeof import('primevue/inputnumber')['default']
+    Image: typeof import('primevue/image')['default']
     InputText: typeof import('primevue/inputtext')['default']
-    RadioButton: typeof import('primevue/radiobutton')['default']
-    Rating: typeof import('primevue/rating')['default']
+    MegaMenu: typeof import('primevue/megamenu')['default']
+    Menubar: typeof import('primevue/menubar')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Select: typeof import('primevue/select')['default']
-    Tag: typeof import('primevue/tag')['default']
-    Textarea: typeof import('primevue/textarea')['default']
     Toast: typeof import('primevue/toast')['default']
-    Toolbar: typeof import('primevue/toolbar')['default']
   }
   export interface ComponentCustomProperties {
-    StyleClass: typeof import('primevue/styleclass')['default']
+    Ripple: typeof import('primevue/ripple')['default']
   }
 }
