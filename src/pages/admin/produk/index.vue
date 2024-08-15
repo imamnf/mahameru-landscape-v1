@@ -1,9 +1,9 @@
-<template>admin</template>
+<template>produk</template>
 
 <route lang="json">
 {
   "meta": {
-    "title": "Selamat Datang Kembali...",
+    "title": "Produk",
     "layout": "admin/AppLayout"
   }
 }

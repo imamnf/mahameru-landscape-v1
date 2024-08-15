@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router/auto';
+
 import { useLayout } from '@/layout/admin/composables/layout';
 
+// State
 const { layoutConfig, layoutState, isSidebarActive, resetMenu } = useLayout();
-
 const outsideClickListener = ref<((event: Event) => void) | null>();
+const route = useRoute();
 
 watch(isSidebarActive, (newVal) => {
   if (newVal) {
@@ -60,6 +63,8 @@ const isOutsideClicked = (event: Event) => {
 
     <div class="layout-main-container">
       <div class="layout-main">
+        <h1 class="block mb-6 text-4xl">{{ route.meta.title }}</h1>
+
         <RouterView />
       </div>
 

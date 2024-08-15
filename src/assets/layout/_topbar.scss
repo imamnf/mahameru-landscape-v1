@@ -10,6 +10,7 @@
   transition: left var(--layout-section-transition-duration);
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--p-surface-100);
 
   .layout-topbar-logo-container {
     width: 20rem;
@@ -71,7 +72,7 @@
   }
 
   .layout-menu-button {
-    margin-left: 2rem;
+    margin-left: 0;
   }
 
   .layout-topbar-menu-button {
