@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const items = ref([{ label: 'Tentang Kami' }, { label: 'Produk' }]);
+// State
+const items = ref([
+  { label: 'Tentang Kami', route: '/' },
+  { label: 'Produk', route: '/produk' }
+]);
 </script>
 
 <template>
@@ -28,9 +32,11 @@ const items = ref([{ label: 'Tentang Kami' }, { label: 'Produk' }]);
         </RouterLink>
       </template>
       <template #item="{ item, props }">
-        <a v-ripple class="flex items-center" v-bind="props.action">
-          <span class="text-lg font-medium">{{ item.label }}</span>
-        </a>
+        <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
+          <a v-ripple :href="href" v-bind="props.action" @click="navigate">
+            <span class="text-lg font-medium">{{ item.label }}</span>
+          </a>
+        </router-link>
       </template>
     </Menubar>
   </div>

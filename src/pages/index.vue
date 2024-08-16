@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { CompanyService } from '@/service/CompanyService';
 
-// Hooks
+// mengambil data saat membuka halaman
 onMounted(() => {
   CompanyService.getCompany().then((data) => (company.value = data));
 });
 
-// State
+// menyimpan data yang sudah diambil
 const company = ref<{
   about: string[];
   vision: string[];
