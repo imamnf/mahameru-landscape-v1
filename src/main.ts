@@ -1,4 +1,7 @@
 import { createApp } from 'vue';
+import { createHead } from '@unhead/vue';
+
+import { definePreset } from '@primevue/themes';
 
 import App from './App.vue';
 
@@ -9,9 +12,16 @@ import ToastService from 'primevue/toastservice';
 
 import '@/assets/styles.scss';
 import '@/assets/tailwind.css';
-import { definePreset } from '@primevue/themes';
+
+import { registerPlugins } from './utils/plugins';
 
 const app = createApp(App);
+
+const head = createHead();
+
+registerPlugins(app);
+
+app.use(head);
 
 const MyPreset = definePreset(Aura, {
   semantic: {
