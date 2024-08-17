@@ -1,17 +1,26 @@
-import { createApp } from 'vue';
+import { createApp } from 'vue'
+import { createHead } from '@unhead/vue'
 
-import App from './App.vue';
+import { definePreset } from '@primevue/themes'
 
-import Aura from '@primevue/themes/aura';
-import PrimeVue from 'primevue/config';
-import ConfirmationService from 'primevue/confirmationservice';
-import ToastService from 'primevue/toastservice';
+import Aura from '@primevue/themes/aura'
+import PrimeVue from 'primevue/config'
+import ConfirmationService from 'primevue/confirmationservice'
+import ToastService from 'primevue/toastservice'
+import App from './App.vue'
 
-import '@/assets/styles.scss';
-import '@/assets/tailwind.css';
-import { definePreset } from '@primevue/themes';
+import '@/assets/styles.scss'
+import '@/assets/tailwind.css'
 
-const app = createApp(App);
+import { registerPlugins } from './utils/plugins'
+
+const app = createApp(App)
+
+const head = createHead()
+
+registerPlugins(app)
+
+app.use(head)
 
 const MyPreset = definePreset(Aura, {
   semantic: {
@@ -26,20 +35,20 @@ const MyPreset = definePreset(Aura, {
       700: '{emerald.700}',
       800: '{emerald.800}',
       900: '{emerald.900}',
-      950: '{emerald.950}'
-    }
-  }
-});
+      950: '{emerald.950}',
+    },
+  },
+})
 
 app.use(PrimeVue, {
   theme: {
     preset: MyPreset,
     options: {
-      darkModeSelector: '.app-dark'
-    }
-  }
-});
-app.use(ToastService);
-app.use(ConfirmationService);
+      darkModeSelector: '.app-dark',
+    },
+  },
+})
+app.use(ToastService)
+app.use(ConfirmationService)
 
-app.mount('#app');
+app.mount('#app')

@@ -1,5 +1,7 @@
 <template>
+  <AppMenu />
+
   <RouterView />
 
-  <Toast />
+  <AppFooter />
 </template>
