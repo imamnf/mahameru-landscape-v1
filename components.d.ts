@@ -10,15 +10,14 @@ declare module 'vue' {
     AppFooter: typeof import('./src/layout/AppFooter.vue')['default']
     AppLayout: typeof import('./src/layout/AppLayout.vue')['default']
     AppMenu: typeof import('./src/layout/AppMenu.vue')['default']
-    Avatar: typeof import('primevue/avatar')['default']
-    Badge: typeof import('primevue/badge')['default']
     Button: typeof import('primevue/button')['default']
+    DataView: typeof import('primevue/dataview')['default']
     Image: typeof import('primevue/image')['default']
-    InputText: typeof import('primevue/inputtext')['default']
-    MegaMenu: typeof import('primevue/megamenu')['default']
     Menubar: typeof import('primevue/menubar')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SelectButton: typeof import('primevue/selectbutton')['default']
+    Tag: typeof import('primevue/tag')['default']
     Toast: typeof import('primevue/toast')['default']
   }
   export interface ComponentCustomProperties {
