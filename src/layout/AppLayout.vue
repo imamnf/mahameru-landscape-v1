@@ -1,9 +1,7 @@
 <template>
   <AppMenu />
 
-  <div class="pb-12">
-    <RouterView />
-  </div>
+  <RouterView />
 
   <AppFooter />
 </template>

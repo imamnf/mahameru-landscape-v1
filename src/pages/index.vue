@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { CompanyService } from '@/service/CompanyService';
 
-// mengambil data saat membuka halaman
-onMounted(() => {
-  CompanyService.getCompany().then((data) => (company.value = data));
-});
-
 // menyimpan data yang sudah diambil
 const company = ref<{
   about: string[];
   vision: string[];
   mission: string[];
 }>();
+
+// mengambil data saat membuka halaman
+onMounted(() => {
+  CompanyService.getCompany().then((data) => (company.value = data));
+});
 </script>
 
 <template>
@@ -67,7 +67,9 @@ const company = ref<{
 
             <ul>
               <li v-for="mission in company?.mission" :key="mission">
-                <p class="ml-6 text-lg font-medium text-justify text-slate-500">{{ mission }}</p>
+                <p class="ml-6 text-lg font-medium text-justify text-slate-500">
+                  {{ mission }}
+                </p>
               </li>
             </ul>
           </div>
