@@ -1,5 +1,13 @@
-# Vue 3 + TypeScript + Vite
+# Cara Install
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+1. Download Node
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+2. Install pnpm menggunakan script berikut `corepack enable pnpm`
+
+3. Install node_modules menggunakan script `pnpm i`
+
+4. Kemudian jalankan dengan `pnpm dev`
+
+5. Untuk build silahkan jalankan `pnpm build`
+
+6. Kemudian preview hasil build dengan `pnpm preview`
