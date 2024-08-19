@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import { CompanyService } from '@/service/CompanyService';
+import { useCompanyStore } from '@/stores/company.store';
+
+// Store
+const companyStore = useCompanyStore();
 
 // menyimpan data yang sudah diambil
-const company = ref<{
-  about: string[];
-  vision: string[];
-  mission: string[];
-}>();
+const company = reactive({
+  about: computed(() => companyStore.aboutState.data),
+  vision: computed(() => companyStore.visionState.data),
+  mission: computed(() => companyStore.missionState.data)
+});
 
 // mengambil data saat membuka halaman
-onMounted(() => {
-  CompanyService.getCompany().then((data) => (company.value = data));
+onBeforeMount(async () => {
+  await Promise.all([companyStore.getAbout(), companyStore.getVision(), companyStore.getMission()]);
 });
 </script>
 
@@ -37,8 +40,8 @@ onMounted(() => {
         <h3 class="text-4xl font-semibold text-center text-emerald-600">Profil Perusahaan</h3>
 
         <div class="flex flex-col px-64 mt-8 gap-y-6">
-          <div v-for="about in company?.about" :key="about">
-            <p class="text-lg font-medium text-justify" v-html="about" />
+          <div v-for="about in company?.about" :key="about.descs">
+            <p class="text-lg font-medium text-justify" v-html="about.descs" />
           </div>
         </div>
       </div>
@@ -54,9 +57,9 @@ onMounted(() => {
             <h5 class="text-xl font-medium text-emerald-500">Visi</h5>
 
             <ul>
-              <li v-for="(vision, index) in company?.vision" :key="vision">
+              <li v-for="(vision, index) in company?.vision" :key="vision.vision">
                 <p class="ml-6 text-lg font-medium text-justify text-slate-500">
-                  {{ index + 1 }}. {{ vision }}
+                  {{ index + 1 }}. {{ vision.vision }}
                 </p>
               </li>
             </ul>
@@ -66,9 +69,9 @@ onMounted(() => {
             <h5 class="text-xl font-medium text-emerald-500">Misi</h5>
 
             <ul>
-              <li v-for="mission in company?.mission" :key="mission">
+              <li v-for="mission in company?.mission" :key="mission.mission">
                 <p class="ml-6 text-lg font-medium text-justify text-slate-500">
-                  {{ mission }}
+                  {{ mission.mission }}
                 </p>
               </li>
             </ul>

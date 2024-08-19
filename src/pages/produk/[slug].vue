@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router/auto';
 
-import { ProductService } from '@/service/ProductService';
+import { useProductStore } from '@/stores/product.store';
+
+// Store
+const productStore = useProductStore();
 
 // State
 const route = useRoute('produk-slug');
+const products = computed(() => productStore.productsState.data);
 
 const product = ref<
   {
@@ -14,15 +18,31 @@ const product = ref<
     slug: string;
     price: number;
     desc: string;
-    detail: string[];
-    bloom: string[];
+    detail: string;
+    bloom: string;
   }[]
 >();
 
+const details = computed(() => {
+  const dataArray = product.value?.[0].detail.split(';');
+
+  // Membersihkan setiap elemen data (opsional)
+  const cleanedDataArray = dataArray?.map((data) => data.trim());
+
+  return cleanedDataArray;
+});
+
+const blooms = computed(() => {
+  const dataArray = product.value?.[0].bloom.split(';');
+
+  // Membersihkan setiap elemen data (opsional)
+  const cleanedDataArray = dataArray?.map((data) => data.trim());
+
+  return cleanedDataArray;
+});
+
 onBeforeMount(() => {
-  ProductService.getProduct().then(
-    (data) => (product.value = data.filter((item) => item.slug === route.params.slug))
-  );
+  product.value = products.value.filter((item) => item.slug === route.params.slug);
 });
 </script>
 
@@ -50,7 +70,7 @@ onBeforeMount(() => {
           <h3 class="text-xl font-semibold text-slate-800">Detail</h3>
 
           <ul class="mt-2 w-[30rem] flex flex-col gap-y-2 list-disc">
-            <li v-for="detail in item.detail" :key="detail" class="ml-4 text-slate-500">
+            <li v-for="detail in details" :key="detail" class="ml-4 text-slate-500">
               {{ detail }}
             </li>
           </ul>
@@ -60,7 +80,7 @@ onBeforeMount(() => {
           <h3 class="text-xl font-semibold text-slate-800">Bunga</h3>
 
           <ul class="mt-2 w-[30rem] flex flex-col gap-y-2 list-disc">
-            <li v-for="bloom in item.bloom" :key="bloom" class="ml-4 text-slate-500">
+            <li v-for="bloom in blooms" :key="bloom" class="ml-4 text-slate-500">
               {{ bloom }}
             </li>
           </ul>

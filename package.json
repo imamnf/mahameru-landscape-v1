@@ -13,7 +13,9 @@
   "dependencies": {
     "@primevue/core": "^4.0.4",
     "@primevue/themes": "^4.0.4",
+    "@supabase/supabase-js": "^2.45.1",
     "@unhead/vue": "^1.9.16",
+    "pinia": "^2.2.2",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.4",
     "vue": "^3.4.35",

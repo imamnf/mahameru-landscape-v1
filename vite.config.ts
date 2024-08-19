@@ -53,8 +53,8 @@ export default defineConfig({
     }),
     // Untuk automasi funsi pada dependensi
     AutoImport({
-      imports: ['vue', VueRouterAutoImports],
-      dirs: ['./src/composables', './src/utils'],
+      imports: ['vue', 'pinia', VueRouterAutoImports],
+      dirs: ['./src/lib', './src/composables', './src/utils'],
       vueTemplate: true
     })
   ],

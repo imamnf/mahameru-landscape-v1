@@ -1,18 +1,21 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router/auto';
 
-import { ProductService } from '@/service/ProductService';
+import { useProductStore } from '@/stores/product.store';
 
 import { formatNumber } from '@/composables/useNumber';
 
+// Store
+const productStore = useProductStore();
+
 // State
+const products = computed(() => productStore.productsState.data);
 const router = useRouter();
-const products = ref();
 const layout = ref<'grid' | 'list' | undefined>('grid');
 const options = ref(['list', 'grid']);
 
-onMounted(() => {
-  ProductService.getProduct().then((data) => (products.value = data));
+onBeforeMount(() => {
+  productStore.getProducts();
 });
 </script>
 

@@ -10,7 +10,16 @@ declare module 'vue' {
     AppFooter: typeof import('./src/layout/AppFooter.vue')['default']
     AppLayout: typeof import('./src/layout/AppLayout.vue')['default']
     AppMenu: typeof import('./src/layout/AppMenu.vue')['default']
+    Button: typeof import('primevue/button')['default']
+    DataView: typeof import('primevue/dataview')['default']
+    Image: typeof import('primevue/image')['default']
+    Menubar: typeof import('primevue/menubar')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SelectButton: typeof import('primevue/selectbutton')['default']
+    Toast: typeof import('primevue/toast')['default']
+  }
+  export interface ComponentCustomProperties {
+    Ripple: typeof import('primevue/ripple')['default']
   }
 }
